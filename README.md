@@ -22,5 +22,6 @@ Markdown
 
 Why did I choose to Embed the Tag?
 I chose to embed the Tag because tags are small, simple labels (like “Emergency” or “Tax-Deductible”) that only make sense in the context of a transaction. They don’t need to exist independently or be shared across multiple documents. Embedding them keeps the schema lightweight, avoids unnecessary complexity, and makes queries faster since the tags are stored directly inside the transaction document.
+
 Why did I choose to Reference the User?
 I chose to reference the User because a user can exist independently and may be linked to many transactions. If I embedded user details inside each transaction, I would risk duplication and inconsistency whenever the user’s information changes. By referencing, I maintain a single source of truth for user data and simply link transactions to the user using their ObjectId. This makes the relationship scalable and ensures data integrity.
