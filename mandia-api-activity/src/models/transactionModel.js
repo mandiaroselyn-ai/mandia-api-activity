@@ -1,13 +1,20 @@
 const mongoose = require('mongoose');
+const userSchema = new mongoose.Schema({
+    username: { type: String, required: true },
+    email: { type: String, required: true, unique: true }
+});
+module.exports = mongoose.model('User', userSchema);
 
 const transactionSchema = new mongoose.Schema( {
     description: {
         type: String,
-        required: true
+        required: true,
+        minLength: [3, 'Description must be at least 3 characters long'],
     },
     amount: {
         type: Number,
-        required: true
+        required: true,
+        min: [0.01, 'Amount must be greater than zero'],
     },
     type: {
         type: String,
@@ -18,6 +25,11 @@ const transactionSchema = new mongoose.Schema( {
     date: {
         type: Date,
         default: Date.now
+    },
+    tags: [String],
+  user: {          
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     }
 });
 
