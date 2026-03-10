@@ -31,12 +31,12 @@ I chose to reference the User because a user can exist independently and may be 
 1. Authentication vs Authorization:
 o What is the difference between Authentication and Authorization in our
 code?
-o Answer:
+o Answer: Authentication checks who you are, while authorization checks what you are allowed to do.
 2. Security (bcrypt):
 o Why did we use bcryptjs instead of saving passwords as plain text in
 MongoDB?
-o Answer:
+o Answer: We use bcryptjs to encrypt passwords so they are safe and not stored as plain text.
 3. JWT Structure:
 o What does the protect middleware do when it receives a JWT from the
 client?
-o Answer:
+o Answer: The protect middleware verifies the token, finds the user, and allows access to protected routes.
