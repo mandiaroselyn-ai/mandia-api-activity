@@ -25,3 +25,18 @@ I chose to embed the Tag because tags are small, simple labels (like “Emergenc
 
 Why did I choose to Reference the User?
 I chose to reference the User because a user can exist independently and may be linked to many transactions. If I embedded user details inside each transaction, I would risk duplication and inconsistency whenever the user’s information changes. By referencing, I maintain a single source of truth for user data and simply link transactions to the user using their ObjectId. This makes the relationship scalable and ensures data integrity.
+
+
+
+1. Authentication vs Authorization:
+o What is the difference between Authentication and Authorization in our
+code?
+o Answer:
+2. Security (bcrypt):
+o Why did we use bcryptjs instead of saving passwords as plain text in
+MongoDB?
+o Answer:
+3. JWT Structure:
+o What does the protect middleware do when it receives a JWT from the
+client?
+o Answer:
